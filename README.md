@@ -1,2 +1,3 @@
 # JWT-validation
-SlashRTC 3 tasks
+
+Validating the data using Node-input-validator and create a token if detail match
