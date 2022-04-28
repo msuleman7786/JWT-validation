@@ -13,7 +13,6 @@ router.get('/',async (req,res)=>{
 
   router.post('/', async (req, res) => {
     let data = await usersDbConenct.usersDbConenct()
-    let result = await data.insertOne(req.body)
 
     // Validating :- Email and Password
     const v = new Validator(req.body, {email: 'required|email', password: 'required'});
@@ -25,6 +24,7 @@ router.get('/',async (req,res)=>{
         });
       }
       else {
+        let result = await data.insertOne(req.body)
         return res.status(200).send(result);
       }
   })
